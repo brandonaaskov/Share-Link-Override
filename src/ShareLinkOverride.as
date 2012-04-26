@@ -16,8 +16,8 @@ package {
 		{
 			trace("@project ShareLinkOverride");
 			trace("@author Brandon Aaskov (Brightcove)");
-			trace("@lastModified 02.16.11 1135 EST");
-			trace("@version 1.1.0");
+			trace("@lastModified 04.26.11 1236 EST");
+			trace("@version 1.1.1");
 		}
 		
 		override protected function initialize():void

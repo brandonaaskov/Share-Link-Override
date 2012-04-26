@@ -11,4 +11,6 @@ To use the plugin, you can either compile a SWF yourself by downloading the sour
 Release Notes
 =============
 
+v1.1.1: The deep linking code didn't have a string initialized, and in single video players, a "null" variable was getting appended to the URL. This is fixed now.
+
 v1.1.0: Updated the plugin to support playlist players. We first check if there are already params on the URL, and then add the bclid and bctid parameters appropriately.
