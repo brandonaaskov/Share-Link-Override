@@ -52,7 +52,7 @@ package {
     
     private function getDeepLinkParams():String
     {
-      var deepLinkParams:String;
+      var deepLinkParams:String = "";
       
       if(_videoPlayerModule.getCurrentVideo().lineupId)
       {
