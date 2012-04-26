@@ -16,8 +16,8 @@ package {
 		{
 			trace("@project ShareLinkOverride");
 			trace("@author Brandon Aaskov (Brightcove)");
-			trace("@lastModified 07.13.11 1010 EST");
-			trace("@version 1.0.0");
+			trace("@lastModified 02.16.11 1135 EST");
+			trace("@version 1.1.0");
 		}
 		
 		override protected function initialize():void
@@ -47,7 +47,21 @@ package {
 		
 		private function changeShareLinkToPageURL():void
 		{
-			_socialModule.setLink(_experienceModule.getExperienceURL());
+			_socialModule.setLink(_experienceModule.getExperienceURL() + getDeepLinkParams());
 		}
+    
+    private function getDeepLinkParams():String
+    {
+      var deepLinkParams:String;
+      
+      if(_videoPlayerModule.getCurrentVideo().lineupId)
+      {
+        deepLinkParams = (_experienceModule.getExperienceURL().indexOf('?') == -1) ? '?' : '&';
+        deepLinkParams += 'bclid=' + _videoPlayerModule.getCurrentVideo().lineupId;
+        deepLinkParams += '&bctid=' + _videoPlayerModule.getCurrentVideo().id;
+      }
+      
+      return deepLinkParams;
+    }
 	}
 }
